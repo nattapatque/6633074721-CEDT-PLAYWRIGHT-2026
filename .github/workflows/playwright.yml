@@ -20,8 +20,8 @@ jobs:
     - name: Run Playwright tests
       env:
         URL: ${{ vars.URL }}
-        USERNAME: ${{ vars.TEST_USERNAME }} 
-        PASSWORD: ${{ secrets.TEST_PASSWORD }}
+        TEST_USERNAME: ${{ vars.TEST_USERNAME }} 
+        TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
       run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
